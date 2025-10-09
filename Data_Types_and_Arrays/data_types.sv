@@ -38,7 +38,7 @@
 // Eg. typedef enum {WHITE[3:5]=4} color6; --> WHITE[3] = 4, WHITE[4] = 5, WHITE[5] = 6.
 // NOTE: Default enum supports maximum 2^32 combinations because default data type of enumeration is int.
 // Example 1.
-/*
+
 class pkt;
   typedef enum {RED, GREEN, BLUE, YELLOW} color_e;
   // RED = 0, GREEN = 1, BLUE = 2, YELLOW = 3
@@ -55,10 +55,9 @@ module top;
     end while (c != c.first());  // stop after wrap
   end
 endmodule
-*/
 
 // Example 2.
-/*
+
 class pkt;
   typedef enum {RED=1, GREEN, BLUE, YELLOW} color_e;
   // RED = 1, GREEN = 2, BLUE = 3, YELLOW = 4
@@ -75,10 +74,7 @@ module top;
     end while (c != c.first());  // stop after wrap
   end
 endmodule
-*/
-
 // Example 3
-/*
 class pkt;
   typedef enum {RED=5, GREEN, BLUE=10, YELLOW} color_e;
   // RED = 5, GREEN = 6, BLUE = 10, YELLOW = 11
@@ -95,10 +91,7 @@ module top;
     end while (c != c.first());  // stop after wrap
   end
 endmodule
-*/
-
 // Example 4 
-/*
 class pkt;
    typedef enum {RED=4, GREEN, YELLOW} light;
    rand light l;
@@ -118,10 +111,8 @@ module top;
       // Light=00000000000000000000000000000101 , light=GREEN
   end
 endmodule
-*/
-
 // Example 5
-/*
+
 class pkt;
    typedef enum {RED=4, GREEN, YELLOW=5} light;
    rand light l;
@@ -141,8 +132,6 @@ module top;
       // ** Error: data_types.sv(118): (vlog-13002) Enum member 'YELLOW' does not have unique value.
     end
 endmodule
-*/
-
 // Example 6
 // typedef enum bit[2:0] {red=7, green, yellow} light
 // Green value is 8 But our enum range is[2:0] So we can’t store.
@@ -150,7 +139,6 @@ endmodule
 //
 
 // Example 7 Methods in enumeration.
-/*
 class pkt;
     enum {red, green, yellow, blue} light;
     function void print();
@@ -170,10 +158,7 @@ module top;
         p.print();
     end
 endmodule
-*/
-
 // Example 8 enum method prev(N) and next(N).
-/*
 class pkt;
     enum {red, green, yellow, blue} light;
     function void print();
@@ -193,10 +178,8 @@ module top;
         p.print();
     end
 endmodule
-*/
-
 // Example 9 Displaying all enum variable using single $display.
-/*
+
 typedef enum {white[1:5] = 3} set2;
 module top;
     typedef enum {green, yellow, red, blue} set1;
@@ -218,7 +201,6 @@ module top;
         end
     end
 endmodule
-*/
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // 2] EVENT DATA-TYPE:
@@ -226,7 +208,7 @@ endmodule
 // waiting for an event can achieved by (wait or @).
 // We can using both ( .triggered and ->> ).
 // Example 1.
-/*
+
 module top;
     event ev;
     initial begin
@@ -240,9 +222,7 @@ module top;
         $display("@%0t ::: Over Event Triggered", $time);
     end
 endmodule
-*/
 // Example 2.
-/*
 module top;
     event ev;
     initial begin
@@ -255,11 +235,9 @@ module top;
         $display("@%0t ::: Over Event Triggered", $time);
     end
 endmodule
-*/
 //  Here triggering an event and waiting for an event is done at same 0ns (RACE CONDITION).This can solved by (.triggered)
 //  "$display("@%0t ::: Over Event Triggered", $time);" This display statement not executed because of race condition.
 //  This RACE CONDITION is solved by using .triggered.
-/*
 module top;
     event ev;
     initial begin
@@ -272,9 +250,7 @@ module top;
         $display("@%0t :: Over Event Triggered.", $time);
     end
 endmodule
-*/
 // OR BY USING NON-BLOCKING TRIGGERING OPERATOR ( ->> ) ALSO WE CAN OVERCOME THIS RACE CONDITION.
-/*
 module top;
     event ev;
     initial begin
@@ -288,9 +264,7 @@ module top;
         $display("@%0t ::: Over Event Triggered", $time);
     end
 endmodule
-*/
 // Example 4 Merging of 2 events.
-/*
 module top;
     event e1, e2;
     initial begin
@@ -311,7 +285,6 @@ module top;
         join
     end
 endmodule
-*/
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // 3] STRUCT DATA-TYPE:
@@ -322,7 +295,6 @@ endmodule
 // Struct by default unpacked in nature.
 //
 // Example 1.
-/*
 module top;
     struct{
         string fruit;
@@ -341,9 +313,7 @@ module top;
         $display("fruit1=%p",st_fruit);
     end
 endmodule
-*/
 // Example 2. 
-/*
 typedef struct{
     string fruit;
     int fruit_count;
@@ -359,7 +329,6 @@ module top;
         $display("fruit1=%pfruit2=%p",fruit1,fruit2);
     end
  endmodule
- */
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // 4] UNION  DATATYPE:
@@ -387,5 +356,5 @@ module top;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // 6] TYPEDEF DATA-TYPE ::
 // Typedef mainly used to create a new datatypes and also used for forward declaration purpose.
-//
+
 
