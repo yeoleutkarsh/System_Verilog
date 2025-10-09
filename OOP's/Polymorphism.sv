@@ -1,4 +1,4 @@
-/*
+// Example 1 ::
 class parent;
 	virtual task send();
 		$display("This is parent class.");
@@ -21,8 +21,8 @@ module ptest;
 		p.send();
 	end
 endmodule
-*/
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Example 2 ::
 class car;
 	int door = 4;
 	int mirror = 6;
@@ -54,3 +54,4 @@ module ptest1;
 		c1.print();
 	end
 endmodule
+
