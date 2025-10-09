@@ -1,4 +1,4 @@
-/*
+// Example 1 ::
 virtual class parent;
 	bit [3:0] data;
 	
@@ -20,9 +20,8 @@ module testa;
 		$display("Data = %0b",c.data);
 	end
 endmodule
-*/
-
-/*
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Example 2 ::
 virtual class base_class;
 	bit [3:0] data;
 	int id;
@@ -47,14 +46,12 @@ module testa1;
 		c1.display();
 	end
 endmodule
-*/
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Exaample 3 ::
 virtual class bike;
 	int tyre;
 	int mirror;
-	
 	pure virtual function void display();
-
 endclass
 
 class hero extends bike;
@@ -72,3 +69,4 @@ module testa2;
 		a.display();
 	end
 endmodule
+
