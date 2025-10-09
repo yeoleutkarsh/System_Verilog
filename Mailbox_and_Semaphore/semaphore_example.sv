@@ -1,5 +1,4 @@
 // Example 1 simple code for semaphore.
-/*
 module top;
   semaphore key;
 
@@ -34,10 +33,8 @@ module top;
   endtask
 
 endmodule
-*/
 
 // Example 2 ( access with 4 keys ).
-/*
 module top;
     semaphore key;
     initial begin
@@ -56,10 +53,8 @@ module top;
         $display("%0t :: put method executed", $time);
     endtask
 endmodule
-*/
 
 // Example 3 try_get method;
-/*
 module top;
     semaphore key;
     initial begin
@@ -79,7 +74,7 @@ module top;
         $display("%0t :: put %0d key", $time, k);
     endtask
 endmodule
-*/
+
 // Example 4 trying to get more keys in a process.
 module top;
     semaphore key;
@@ -99,3 +94,4 @@ module top;
         key.put( key1 );
     endtask
 endmodule
+
