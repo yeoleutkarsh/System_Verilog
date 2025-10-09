@@ -1,5 +1,4 @@
 // Example 1 fork_join example.
-/*
 module ex1;
     initial begin
         fork
@@ -12,10 +11,8 @@ module ex1;
         join
     end
 endmodule
-*/
 
 // Example 2 fork_join.
-/*
 module ex1;
     initial begin
         fork
@@ -30,9 +27,8 @@ module ex1;
         join
     end
 endmodule
-*/
+
 // Example 3 fork_join
-/*
 module ex1;
     initial begin
         fork
@@ -45,9 +41,8 @@ module ex1;
         join
     end
 endmodule
-*/
+
 // Example 4 fork_join_any + wait fork
-/*
 module ex1;
     initial begin
         fork
@@ -63,9 +58,8 @@ module ex1;
         $display("[%0t] Fork completely done.", $time);
     end
 endmodule
-*/
+
 // Example 5 join_none + disablf fork
-/*
 module ex1;
     initial begin
     fork
@@ -77,11 +71,9 @@ module ex1;
     $display("[%0t] Disabled", $time);
  end
 endmodule
-*/
+
 // Example 5 Nested Forks
-/*
 module ex1;
-    
 initial begin
   fork
     begin
@@ -96,10 +88,8 @@ initial begin
     $display("[%0t] Outer join done", $time);
  end
 endmodule
-*/
 
 // Example 6 blocking vs non-blocking prints
-/*
 module ex1;
     integer x = 0;
     initial begin
@@ -110,9 +100,8 @@ module ex1;
     #0  $strobe("[%0t] D3(strobe) x=%0d", $time, x);
  end
 endmodule
-*/
+
 // Example 7 multiple $display statement at same time.
-/*
 module ex1;
     initial begin
   #20 $display("[%0t] E1", $time);
@@ -120,10 +109,8 @@ module ex1;
   #0  $display("[%0t] E3", $time);
  end
 endmodule
-*/
-
+        
 // Example 8 event ordering
-/*
 module ex1;
     event ev;
      initial begin
@@ -141,10 +128,8 @@ module ex1;
   join
  end
 endmodule
-*/
-
+        
 // Example 9 wait vs @(posedge)
-/*
 module ex1;
 reg clk = 0;
  initial forever #5 clk = ~clk;
@@ -153,10 +138,8 @@ reg clk = 0;
   #2  @(posedge clk); $display("[%0t] posedge", $time);
  end
 endmodule
-*/
-
+        
 // Example 10 repeat with delays.
-/*
 module ex1;
      integer i;
  initial begin
@@ -166,10 +149,8 @@ module ex1;
   $display("[%0t] done", $time);
  end
 endmodule
-*/
-
+        
 // Example 11 race with 0.
-/*
 module ex1;
 integer a = 0;
 initial begin
@@ -185,10 +166,8 @@ initial begin
   join
  end
 endmodule
-*/
 
 // Example 12 — join_any with longest branch last
-/*
 module ex1;
 initial begin
   fork
@@ -201,10 +180,8 @@ initial begin
   $display("[%0t] all done", $time);
  end
 endmodule
-*/
 
 // Example 13 sequential begin......end
-/*
 module ex1;
 initial begin
   begin
@@ -214,10 +191,8 @@ initial begin
   #2 $display("[%0t] H3", $time);
  end
 endmodule
-*/
 
 // Example 14  fork…join_any inside fork…join
-/*
 module ex1;
  initial begin
   fork
@@ -234,10 +209,8 @@ module ex1;
   $display("[%0t] Outer join complete", $time);
  end
 endmodule
-*/
 
 // Example 15  join_none without wait
-/*
 module ex1;
 initial begin
   fork
@@ -247,10 +220,8 @@ initial begin
   $display("[%0t] Exited immediately", $time);
  end
 endmodule
-*/
 
 // Example 16  Multiple join_any with wait fork
-/*
 module ex1;
 initial begin
   fork
@@ -263,10 +234,8 @@ initial begin
   $display("[%0t] All finished", $time);
  end
 endmodule
-*/
 
 // Example 17 Nested join_none with disable
-/*
 module ex1;
 initial begin
   fork
@@ -284,10 +253,8 @@ initial begin
   $display("[%0t] Done", $time);
  end
 endmodule
-*/
 
 // Example 18 Race with blocking vs non-blocking
-/*
 module ex1;
 integer a=0;
  initial begin
@@ -303,10 +270,8 @@ integer a=0;
   join
  end
 endmodule
-*/
 
 // Example 19  Parallel sequential blocks
-/*
 module ex1;
 initial begin
   fork
@@ -322,10 +287,8 @@ initial begin
   $display("[%0t] Completed", $time);
  end
 endmodule
-*/
 
 // Example 20 join_any with longest thread finishing first
-/*
 module ex1;
  initial begin
   fork
@@ -338,10 +301,8 @@ module ex1;
   $display("[%0t] All threads done", $time);
  end
 endmodule
-*/
 
 // Example 21 Event + fork
-/*
 module ex1;
 event ev;
  initial begin
@@ -359,10 +320,8 @@ event ev;
   join
  end
 endmodule
-*/
 
 // Example 22  join_none with forever loop
-/*
 module ex1;
 initial begin
   fork
@@ -374,10 +333,8 @@ initial begin
   $display("[%0t] join_none exit", $time);
  end
 endmodule
-*/
 
 // Example 23 Delays + nested forks
-/*
 module ex1;
 initial begin
   fork
@@ -393,10 +350,10 @@ initial begin
   $display("[%0t] Outer join done", $time);
  end
 endmodule
-*/
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Example 24 How to implement fork.....join_none using fork.....join_any
-/*
+
 module ex1;
 initial begin
     fork
@@ -408,10 +365,10 @@ initial begin
     $display("fork....Join_none");
 end
 endmodule
-*/
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Example 25 How to Implement fork.....join_any using fork....join_none.
-/*
+
 module ex1;
     event ev;
     initial begin
@@ -428,11 +385,10 @@ module ex1;
         $display("Done fork");
     end
 endmodule
-*/
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Example 26 How to implement fork......join using fork.....join_any
-/*
 module ex1;
     int done = 0;
     initial begin
@@ -454,7 +410,6 @@ module ex1;
         $display("fork...join");
     end
 endmodule
-*/
 //////// O/P
 // # [5] A2
 // # [10] A1
@@ -464,7 +419,6 @@ endmodule
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Example 27 How to implement fork......join using fork.....join_none
-/*
 module ex1;
     int done = 0;
     initial begin
@@ -486,7 +440,6 @@ module ex1;
         $display("fork...join");
     end
 endmodule
-*/
 //////// O/P
 // # [5] A2
 // # [10] A1
@@ -494,7 +447,7 @@ endmodule
 // # fork...join
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Example 28 what is the output of the following code? why?
-/*
+
 module ex1; 
   initial begin 
     for(int i=0;i<3;i++) begin 
@@ -504,7 +457,6 @@ module ex1;
     end 
   end 
 endmodule 
-*/
 ///////////// O/P::
 // 3
 // 3
@@ -514,3 +466,4 @@ endmodule
 // When they finally run, i has already reached 3 (the final loop value).
 // $display evaluates i when the process executes, not when the fork was created.
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
+
