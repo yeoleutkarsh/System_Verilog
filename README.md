@@ -10,6 +10,8 @@
 # **2) Full Adder SV Testbench:**   
 - Code Link -> https://edaplayground.com/x/EjbC
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d6c0b958-6f05-4c3e-a899-9e176684c800" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f35b31df-efbb-4ac5-b880-7c4b1806b8fd" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/278edf51-808d-45c6-9509-2ffaed465613" />
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 3) Adeer 4-bit SV Testbench  -> https://edaplayground.com/x/PZu6
